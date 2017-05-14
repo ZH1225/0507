@@ -1,0 +1,20 @@
+
+    /*CSS Reset */
+    body,h1,h2,h3,h4,h5,h6,ul,li,ol{
+        margin:0;
+        padding:0;
+    }
+    /* 用萬用字元，接下來所有的字體都會被套用*/ 
+    *{
+        /*定義字體*/
+     font-family:tahoma;  
+    }
+    /*浮動問題的解決方案，如果用float就不用定義這組*/
+    .clearfix::after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+  img{
+        width:100%;
+    }

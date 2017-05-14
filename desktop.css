@@ -1,0 +1,152 @@
+@media screen and (min-width:1000px){
+    
+.full-width{
+        width:100%;
+    }
+    .fixed-width{
+        width:1000px;
+        margin:auto;
+    }
+    .col-1{
+        width:980px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+    .col-2{
+        width:480px;
+        margin-left:10px;
+        margin-right:10px;
+        float:left;
+    }
+    .col-3{
+        width:calc(1000px/3 - 20px);
+        margin-left:10px;
+        margin-right:10px;
+        float:left;
+    }
+    nav{
+        height:60px;
+        background-color: #222;
+    }
+    nav .logo{
+        float:left;
+        width:60px;
+        height:60px;
+        background-color:#783dff;
+    }
+    nav .menu{
+        float:right;
+    }
+    nav li{
+      float:left;
+        list-style: none;
+    }
+    nav .menu a{
+        display:block;
+        letter-spacing: 1px;
+        padding-left:15px;
+        padding-right:15px;
+        height:60px;
+        line-height:60px;
+        text-decoration: none;
+        color: #fff;
+        
+    }
+    nav .menu a:hover{
+        color:coral;
+    }
+    header{
+        /*不要設定圖片大小，因為如果要放文字進來會無法放 */
+        padding-top:300px;
+        padding-bottom:300px;
+        background-image: url(images/header.jpg);
+        /*因為圖片太大，所以強迫做一些設定*/
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-position:center;/*讓羊的頭再往上一點*/
+    }
+    #about,#portfolio,#blog{
+        padding-top:150px;
+        padding-bottom: 150px;
+    }
+    /* 代表在about層級裡面的第2個col-2置中，因為圖片的預設是inline所以不能用margin:auto，要用另一種置中方式 text-align */
+    #about .col-2:nth-of-type(2) {
+        text-align: center;
+    }
+    /*nth-of-type(2) 代表在about層級裡面的第二塊  */
+    #about .col-2:nth-of-type(2) img {
+        width:300px;
+        height:300px;
+    }
+    #portfolio{
+        /* 因為要優化所以可以把這元素放到上面#about, #porfolio, blog 
+        padding-top: 150px;
+        padding-bottom: 150px;  */
+        background-color: #717171;
+    }
+    #portfolio .col-3{
+        height:200px;
+        overflow:hidden;
+        margin-bottom: 30px; /* 用col-3去推，就不用下方的#porfolio .fixed-width:nth-of-type(1)設定 */
+    }
+    /*方法一：另一種設定圖片有距離方法，要搭配下方的clearfix
+    #porfolio .fixed-width:nth-of-type(1) {
+        margin-bottom: 30px;
+    }  */
+    
+    /*因為要優化所以可以把這元素放到上面#about, #porfolio, blog 
+    #blog{   
+    padding-top: 150px;
+    padding-bottom:150px;
+    }  */
+    
+    #blog p{
+        margin-bottom: 30px;
+        margin-top:30px; /*把和按鈕距離btn要拉開的距離下在這裡*/
+    }
+   
+    .btn{
+        display:inline-block;
+        padding:8px 30px;
+        background-color: #333;
+        color:#eee;
+        text-decoration: none;
+    }
+    .btn:hover{
+        background-color: #b9b9b9;
+        color:#646464;
+    }
+      .btn-inverse{
+        display:inline-block;
+        padding:8px 30px;
+        background-color: #eee;
+        color:#333;
+        text-decoration: none;
+    }
+    footer{
+        background-color: #c7c7c7;
+        text-align: center;
+        padding-top:10px;
+        padding-bottom: 10px;
+    }
+    #about {
+        text-align: center;
+    }
+    #about .fixed-width {
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 0;
+    }
+    #about .fixed-width::before {
+        content: "";
+        vertical-align: middle;
+        display: inline-block;
+    }
+    #about .fixed-width .col-2s {
+        vertical-align: middle;
+        display: inline-block;
+        width: 50%;
+        font-size: 16px;
+        text-align: left;
+    }
+    } 
