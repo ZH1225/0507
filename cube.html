@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            width:200px;
+            height:200px;
+            perspective: 800px;
+            position: relative;
+            margin:20% auto;
+
+        }
+        
+        .cube{
+            position: absolute;
+            width:100%; 
+                height:100%; /*讓寬高去符合外圍 */
+            transform-style:preserve-3d;
+            transform:rotateY(130deg)rotateX(125deg); /*數字越大轉得越快，數字1000以上會連續一直轉 */
+            transition: all 1s;
+        }
+        .container:hover .cube {
+            transform: rotateY(30deg)rotateX(25deg);
+        }
+        
+        .cube div{
+            position: absolute;
+            width:100%;
+            height:100%;
+            opacity: .6;
+        }
+        .front{
+            background-color: #f55151;
+        }
+        .back{
+            background-color: #51c9f5;}
+        .left{
+            background-color: #26ff3f;}
+        .right{
+            background-color: #381710;}
+        .top{
+            background-color: #d551f5;}
+        .bottom{
+            background-color: #d9ff38;}
+        
+        
+        /*軸心Z也會跟著轉 */
+        .front{
+            transform: translateZ(100px); /*往前位移 */
+        }
+        .back{
+            transform: rotateY(180deg)translateZ(100px);
+        }
+        .right{
+            transform: rotateY(90deg)translateZ(100px);
+        } 
+        .left{
+            transform: rotateY(-90deg)translateZ(100px);
+        }  
+        .top{
+            transform: rotateX(90deg)translateZ(100px);
+        }  
+        .bottom{
+            transform: rotateX(-90deg)translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+ 
+  </div>
+   </div> 
+</body>
+</html>

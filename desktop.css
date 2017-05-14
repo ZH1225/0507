@@ -50,10 +50,26 @@
         line-height:60px;
         text-decoration: none;
         color: #fff;
+        /*transition: all .3s; */
         
     }
-    nav .menu a:hover{
+  
+    nav .menu a::after{
+        content:"";
+        border-bottom: 2px solid #fa0;
+        display:block; /* 虛擬元素要有區塊 */   
+        margin-top: -15px;
+      /*  width:0; */
+        transform:scaleX(0);
+        transition: all .3s;
+        
+    }
+     nav .menu a:hover{
         color:coral;
+    } 
+    nav .menu a:hover::after{
+        /* width:100%;*/
+        transform:scaleX(1)
     }
     header{
         /*不要設定圖片大小，因為如果要放文字進來會無法放 */
@@ -111,6 +127,7 @@
         background-color: #333;
         color:#eee;
         text-decoration: none;
+         transition: all .3s;    
     }
     .btn:hover{
         background-color: #b9b9b9;
